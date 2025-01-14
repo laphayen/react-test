@@ -14,25 +14,26 @@
 <script type="text/babel">
     const root = document.getElementById("root");
     function Title() {
-        return
-        <h3 id="title" onMouseEnter={
-            () => {
-                console.log("button clicked");
-            }
-        }> 
-            Hello I'm a title
-        </h3>;
+        return (
+            <h3 id="title" onMouseEnter={() => {
+                console.log("Title hovered");
+            }}>
+                Hello I'm a title
+            </h3>
+        );
     }
 
-    const Button = () => <button style=
-        {{ backgroundColor: "orange" }} 
-        onClick={() => {
-            console.log("button clicked");}
-        }>
-        click me
-    </button>;
+    const Button = () => (
+        <button style=
+            {{ backgroundColor: "orange" }} 
+            onClick={() => {
+                console.log("button clicked");}
+            }>
+            click me
+        </button>
+    );
 
-    const container = (
+    const Container = () => (
         <div>
             <button>click me</button>
             <Title />
@@ -40,7 +41,7 @@
         </div>
     );
 
-    ReactDOM.render(container, root);
+    ReactDOM.render(<Container />, root);
 
 </script>
 </html>
